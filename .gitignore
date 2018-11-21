@@ -1,2 +1,4 @@
 index.wsgi
 .env
+*.pyc
+*.swp
