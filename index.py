@@ -42,10 +42,28 @@ def logs():
 
 
 
-#@app.route('/test/')
-#def test():
-#    url = get_env('POSTGRES_URL')
-#    return render_template('test.html', url=url)
+@app.route('/about/')
+def about():
+    item1 = {
+        "title": "about our guild",
+        "content": "This is all About our guild. We are wow guild and stuff. \
+                    we like turtles, but respect the life cycle" }
+    item2 = {
+        "title": "Guild Activities",
+        "content": "Sometimes we do mythic uldir, sometimes we kill heroic ghuun, some times we mythic+. once \
+                    we did world pvp, dressing up like pilgrims and raiding SW. we did this on thanksgiving \
+                    weekend so it was contextually sane. Also we killed many, MANY lowbies. I mean if they \
+                    didnt want to get ganked in their capital city, they wouldnt have warmode on, right? RIGHT?!" }
+
+    item3 = {
+        "title": "Accomplishments",
+        "content": "we hit AOTC on ANT and Uldir, we are try-hards sometimes but only made it 2/8 mythic uldir. \
+                    people got totally burnt out and couldnt comprehend the mechanics for zek'voz. well, be \
+                    pushing mythic next patch though, probably." }
+
+    items = [item1, item2, item3]
+
+    return render_template('three_cols.html', items=items)
 
 
 
