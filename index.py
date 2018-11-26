@@ -42,8 +42,8 @@ def logs():
 
 
 
-@app.route('/test/')
-def test():
+@app.route('/about/')
+def about():
     item1 = {
         "title": "about our guild",
         "content": "This is all About our guild. We are wow guild and stuff. \
