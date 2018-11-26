@@ -66,6 +66,33 @@ def about():
     return render_template('three_cols.html', items=items)
 
 
+@app.route('/roster/')
+def roster():
+    officers = {
+        "title": "officers",
+        "content": [
+            "GM Blaineschar-Crushridge  Blaine",
+            "Raid Leader Nemesis-Crushridge / Dahliadied-Crushridge  Hodgy",
+            "Raid Leader Arinora-Anub'arak / Nexia-Anub'arak Zel",
+            "Raid Leader Bano-Smolderthorn   Bano"]}
+    raiders = {
+        "title": "raiders",
+        "content": [
+            "Myroslav-???????",
+            "Blaineschar-Crushridge",
+            "Nemesis-Crushridge",
+            "Arinora-Anub'arak",
+            "Nexia-Anub'arak Zel",
+            "Bano-Smolderthorn"]}
+
+    m_plus = {
+        "title": "M+ Teams",
+        "content": "More to be announced" }
+
+    items = [officers, raiders, m_plus]
+
+    return render_template('three_cols.html', items=items)
+
 
 
 if __name__ == '__main__':

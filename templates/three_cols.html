@@ -13,7 +13,13 @@
     <div class="row">
     {% for item in items %}
         <div class="col border rounded border-white mr-3 mb-3">
-            {{ item.content }}
+            {% if item.content is iterable and item.content is not string %}
+                {% for content in item.content %}
+                    <p class="mb-1">{{ content }} </p>
+                {% endfor %}
+            {% else %}
+                {{ item.content }}
+            {% endif %}
         </div>
     {% endfor %}
     </div>
