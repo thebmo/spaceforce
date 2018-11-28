@@ -1,12 +1,24 @@
 {% include "base.html" %}
 
 <div class="container">
-    <div class="col text-center text-white mb-3 mt-3">
-       <a href="https://www.youtube.com/watch?v=_AUXpnB065o" target="_blank">
-           <img src="{{url_for('static', filename='sf_title.png')}}" style="border: 0;">
-       </a>
+    <div class="row">
+        <div class="col text-center text-white mt-3">
+           <a href="https://www.youtube.com/watch?v=_AUXpnB065o" target="_blank">
+               <img src="{{url_for('static', filename='sf_title.png')}}" style="border: 0;">
+           </a>
 
-       <p>Fighting Space ISIS in Azeroth...</p>
+            <p>Fighting Space ISIS in Azeroth...</p>
+        </div>
     </div>
 </div>
 
+<div>
+    <center><table>
+        <tr>
+            <td class="pr-3"><h5><a href="{{url_for('events')}}">News & Events</a></h5></td>
+            <td class="pr-3"><h5><a href="{{url_for('about')}}">About</a></h5></td>
+            <td class="pr-3"><h5><a href="{{url_for('roster')}}">Roster</a></h5></td>
+            <td class="pr-3"><h5><a href="#">Contact</a></h5></td>
+         </tr>
+    </table></center>
+</div>
