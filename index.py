@@ -94,6 +94,42 @@ def roster():
     return render_template('three_cols.html', items=items)
 
 
+@app.route('/events/')
+def events():
+    news = [
+        { "title": "mythic progression",
+          "content": "Mythic progression is on hold at Taloc and Mother until further notice or \
+                      we get the numbers we need consistently to proceed. Plan on diving into Heroic for \
+                      8.1.0 with Mythic starting a week or two after. Lets get this shit on farm!",
+          "createdAt": "11.28.2018" },
+
+        { "title": "new site",
+          "content": "This is hte beginning of our new site. \
+                      Special thanks to Myroslav for the layout and amazing voices.",
+          "createdAt": "11.28.2018" }]
+    events = [
+        { "title": "Mythic Uldir",
+          "description": "Taloc and Mother (for now)",
+          "timeStart": "Tuesday 7pm CST (server)",
+          "timeEnd": "Tuesday 10pm CST (server)" },
+        { "title": "Heroic Uldir",
+          "description": "Full Clear Heroic Uldir",
+          "timeStart": "Thursday 7pm CST (server)",
+          "timeEnd": "Thursday 10pm CST (server)" },
+        { "title": "Mythic+ Day",
+          "description": "A dedicated day for mythic+ runs for guildies.",
+          "timeStart": "Friday 7pm CST (server)",
+          "timeEnd": "Friday 10pm CST (server)" },
+        { "title": "Whatevers Left",
+          "description": "A flex day to finish whatever content we missed for the week.",
+          "timeStart": "Sunday 7pm CST (server)",
+          "timeEnd": "Sunday 10pm CST (server)" }]
+
+
+    return render_template('two_rows_two_cols.html',
+                           news=news,
+                           events=events)
+
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000)

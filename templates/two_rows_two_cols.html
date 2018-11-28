@@ -1,0 +1,41 @@
+{% include "base.html" %}
+{% include "header.html" %}
+
+<div class="container">
+    <div class="row">
+        <div class="col border rounded border-white text-center mr-3 mb-3">
+            gallery goes here
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col border rounded border-white mr-3 mb-3">
+            <h2 class="text-uppercase text-center">News</h2>
+        </div>
+
+        <div class="col border rounded border-white mr-3 mb-3">
+            <h2 class="text-uppercase text-center">Events</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col border rounded border-white mr-3 mb-3">
+            {% for item in news %}
+               <p class="mb-1">
+                  <h3 class="text-center text-capitalize"> {{ item.title }} - {{ item.createdAt }}</h3>
+                  {{ item.content }}
+               </p>
+            {% endfor %}
+        </div>
+
+        <div class="col border rounded border-white mr-3 mb-3">
+            {% for event in events %}
+               <p class="mb-1 ml-5 pl-3">
+                   {{ event.timeStart }} - {{ event.title }}
+               </p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% include "footer.html" %}
