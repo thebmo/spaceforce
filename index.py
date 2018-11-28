@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, jsonify, url_for, render_template, request, send_from_directory
+from flask import Flask, jsonify, url_for, redirect, render_template, request, send_from_directory
 from flask_basicauth import BasicAuth
 from flask_sqlalchemy import SQLAlchemy
 from helpers import get_env
@@ -16,7 +16,8 @@ basic_auth = BasicAuth(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    # return render_template('index.html')
+    return redirect(url_for('events'))
 
 
 @app.route('/bmo/')
